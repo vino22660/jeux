@@ -39,7 +39,7 @@ function proposerLettre(lettre) {
     essais--;
   }
 
-  document.getElementById("mot").textContent = motVisible.join(" ");
+  document.getElementById("mot").textContent = motVisible.join("");
   document.getElementById("compteur").textContent = `Il vous reste ${essais} essais`;
 
   // Désactive le bouton correspondant du clavier virtuel
@@ -91,3 +91,4 @@ document.addEventListener("keydown", (event) => {
   const lettre = event.key;
   if (/^[a-zA-Z]$/.test(lettre)) proposerLettre(lettre);
 });
+
