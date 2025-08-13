@@ -1,5 +1,5 @@
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Lato;
   background-color: #3b82f6;
   color: #fff;
   display: flex;
@@ -15,7 +15,6 @@ body {
   padding: 30px 40px;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-  max-width: 500px;
 }
 
 .instructions {
@@ -32,7 +31,7 @@ body {
   overflow: hidden;         /* cache le débordement éventuel */
   text-align: center;
   font-size: clamp(1rem, 6vw, 2rem); 
-  text-transform: uppercase ;
+  text-transform: uppercase;
   /* 
     clamp(min, preferred, max) :
     - min = 1rem → jamais plus petit que ça
@@ -93,5 +92,6 @@ body {
   background-color: #94a3b8;
   cursor: not-allowed;
 }
+
 
 
