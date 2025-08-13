@@ -25,11 +25,21 @@ body {
 }
 
 .mot {
-  font-size: 2rem;
+  font-weight: bold;
   letter-spacing: 15px;
   margin: 20px 0;
-  font-weight: bold;
+  white-space: nowrap;      /* pas de passage à la ligne */
+  overflow: hidden;         /* cache le débordement éventuel */
+  text-align: center;
+  font-size: clamp(1rem, 6vw, 2rem); 
+  /* 
+    clamp(min, preferred, max) :
+    - min = 1rem → jamais plus petit que ça
+    - preferred = 6vw → s’adapte à la largeur de l’écran
+    - max = 2rem → jamais plus grand que ça
+  */
 }
+
 
 .lettres {
   font-size: 1.2rem;
@@ -82,3 +92,4 @@ body {
   background-color: #94a3b8;
   cursor: not-allowed;
 }
+
