@@ -1,138 +1,30 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jeu des réceptions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Lato', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu du pendu</title>
+    <link rel="stylesheet" href="style.css">
 
-    body {
-      background-color: #003684;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
-
-    .container {
-      background-color: #004ab3;
-      padding: 30px 40px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      text-align: center;
-      max-width: 400px;
-      width: 100%;
-    }
-
-    h1 {
-      margin-bottom: 20px;
-      font-size: 1.8rem;
-    }
-
-    p {
-      margin-bottom: 15px;
-      font-size: 1.1rem;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    input[type="number"] {
-      padding: 10px;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      background-color: #ffffff;
-      color: #003684;
-    }
-
-    input[type="number"]::placeholder {
-      color: #888;
-    }
-
-    button {
-      padding: 10px;
-      background-color: #00b4d8;
-      border: none;
-      border-radius: 6px;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #009fc1;
-    }
-
-    #return {
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-  </style>
 </head>
 <body>
   <div class="container">
-    <h1>Devine le nombre de réceptions</h1>
-    <p>Entre un nombre ci-dessous</p>
-    <form id="guessForm">
-      <input type="number" id="guessInput" placeholder="Tape ton nombre" />
-      <button type="button" id="guessBtn">Deviner</button>
-    </form>
-    <div id="return">C'est compris entre 5000 et 15000 !!!</div>
+    <h1>Le jeu du pendu</h1>
+    <p class="instructions">Tapez une lettre sur votre clavier pour deviner le mot !</p>
+    
+    <div class="jeu">
+      <h2>Mot à trouver :</h2>
+      <div id="mot" class="mot"></div>
+
+      <h3>Lettres déjà jouées :</h3>
+      <div id="lettres" class="lettres"></div>
+
+      <div id="compteur" class="compteur"></div>
+    </div>
   </div>
 
-  <script>
-    const result = Math.floor(Math.random() * 10000) + 5001;
-    const guess = document.getElementById('guessInput');
-    const button = document.getElementById('guessBtn');
-    const returnDiv = document.getElementById('return');
-    const form = document.getElementById('guessForm');
-
-    function verif() {
-      const userGuess = parseInt(guess.value, 10);
-
-      if (isNaN(userGuess)) {
-        returnDiv.textContent = "Merci d'entrer un nombre valide.";
-        return;
-      }
-
-      if (userGuess === result) {
-        returnDiv.textContent = "C'est gagné !!!";
-      } else if (userGuess < result) {
-        returnDiv.textContent = "C'est plus !!!";
-      } else {
-        returnDiv.textContent = "C'est moins !!!";
-      }
-    }
-
-    button.addEventListener('click', verif);
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      verif();
-    });
-
-    guess.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        verif();
-      }
-    });
-  </script>
+    
+  <script src="script.js"></script>
 </body>
-</html>
 
+</html>
