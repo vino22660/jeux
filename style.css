@@ -32,6 +32,7 @@ body {
   overflow: hidden;         /* cache le débordement éventuel */
   text-align: center;
   font-size: clamp(1rem, 6vw, 2rem); 
+  text-transform: uppercase ;
   /* 
     clamp(min, preferred, max) :
     - min = 1rem → jamais plus petit que ça
@@ -92,4 +93,5 @@ body {
   background-color: #94a3b8;
   cursor: not-allowed;
 }
+
 
